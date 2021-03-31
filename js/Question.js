@@ -10,6 +10,7 @@ class Question {
       this.option2 = createElement('h4');
       this.option3 = createElement('h4');
       this.option4 = createElement('h4');
+      this.reset = createButton("Reset");
     }
   
     hide(){
@@ -49,6 +50,15 @@ class Question {
         contestant.index = contestantCount;
         contestant.update();
         contestant.updateCount(contestantCount);
+      });
+        
+        this.reset.position(20, 20);
+      this.reset.mousePressed(() => {
+        contestant.updateCount(0);
+        quiz.update(0);
+        database.ref("/").update({
+          contestants: null,
+        });
       });
     }
   }
