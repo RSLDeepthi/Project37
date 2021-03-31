@@ -6,7 +6,7 @@ var allContestants;
 var answer;
 var database;
 
-var question, contestant, quiz;
+var question, contestant=0, quiz;
 
 
 function setup(){
